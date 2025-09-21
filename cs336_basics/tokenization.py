@@ -69,7 +69,7 @@ def BPE_TRAINING(corpus):
     PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
     pre_tokenized_corpus = re.findall(PAT, corpus)
     # pre_tokenized_corpus = corpus.split(" ")
-    print(pre_tokenized_corpus)
+    #print(pre_tokenized_corpus)
     #pretokens_corpus_with_space = [token.replace(" ", ".") for token in pre_tokenized_corpus if " " in token]
 
     pretokens_freq = dict(Counter(pre_tokenized_corpus))
@@ -144,6 +144,6 @@ def BPE_TRAINING(corpus):
                     print(idx, token)
                 except UnicodeDecodeError:
                     print(idx, repr(token))  # fallback for non-printable bytes
-
+        return vocab
 
 
